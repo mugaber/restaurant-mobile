@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "noEmit": true,
+    "strict": true,
+    "baseUrl": "./",
+    "target": "esnext",
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "lib": ["es2015", "es2015.promise", "es2016.array.include", "dom"],
+    "paths": {
+      "@cuteapp/*": ["app/*/index", "app/*"]
+    }
+  },
+  "exclude": ["node_modules", "babel.config.js"]
+}

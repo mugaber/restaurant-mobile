@@ -1,19 +1,28 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { NavHeaderStyles } from 'styles'
 
-export default function App() {
+import Dish from 'components/Dish'
+import Main from './components/Main'
+
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+
+const Stack = createStackNavigator()
+
+const dishOptions = ({ route }) => ({ title: `Dish ${route.params.dishName}` })
+
+//
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={NavHeaderStyles}>
+        <Stack.Screen name='Main' component={Main} options={{ title: 'Main Menu' }} />
+
+        <Stack.Screen name='Dish' component={Dish} options={dishOptions} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
