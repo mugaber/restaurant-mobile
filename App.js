@@ -1,26 +1,22 @@
 import React from 'react'
-import { NavHeaderStyles } from 'styles'
 
-import Dish from 'components/Dish'
+import Home from 'components/Home'
 import Main from './components/Main'
 
 import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
+import { createDrawerNavigator } from '@react-navigation/drawer'
 
-const Stack = createStackNavigator()
-
-const dishOptions = ({ route }) => ({ title: `Dish ${route.params.dishName}` })
+const Drawer = createDrawerNavigator()
 
 //
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={NavHeaderStyles}>
-        <Stack.Screen name='Main' component={Main} options={{ title: 'Main Menu' }} />
-
-        <Stack.Screen name='Dish' component={Dish} options={dishOptions} />
-      </Stack.Navigator>
+      <Drawer.Navigator initialRouteName='Home'>
+        <Drawer.Screen name='Home' component={Home} />
+        <Drawer.Screen name='Main' component={Main} />
+      </Drawer.Navigator>
     </NavigationContainer>
   )
 }

@@ -1,6 +1,6 @@
 ## ADDITIONS
 
-- Menu, Menu and Dish components
+- Side Drawer
+- Home component
 
-- react-navigation
-- react-native-elements
+## CHANGES
